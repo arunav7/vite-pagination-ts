@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 export const usePagination = (
   perPageReords: number,
-  totalPageRecords: number
+  totalPageRecords: number,
 ) => {
   const totalPages = Math.ceil(totalPageRecords / perPageReords);
   const [startPageIndex, setStartPageIndex] = useState(0);
@@ -11,8 +11,8 @@ export const usePagination = (
 
   const displayPage = (event: React.ChangeEvent<unknown>, pageNo: number) => {
     setCurrentPageIndex(pageNo);
-    let endPageIndex = perPageReords * pageNo - 1;
-    let startPageIndex = perPageReords * pageNo - perPageReords;
+    const endPageIndex = perPageReords * pageNo - 1;
+    const startPageIndex = perPageReords * pageNo - perPageReords;
     setStartPageIndex(startPageIndex);
 
     if (endPageIndex > totalPageRecords) {
