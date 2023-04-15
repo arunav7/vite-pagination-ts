@@ -7,18 +7,14 @@ import './App.css';
 
 const App: React.FC = (): JSX.Element => {
   const [data, setData] = useState<Posts[]>([]);
-  //getting posts
+  // getting posts
   useEffect(() => {
-    const paginationFunc = async () => {
-      const res = await fetch('https://jsonplaceholder.typicode.com/posts');
-      const data = await res.json();
-      setData(data);
-      console.log(data);
-    };
-    paginationFunc();
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(data => setData(data as Posts[]));
   }, []);
   return (
-    <div className='App'>
+    <div className="App">
       {data && data.length > 0 ? <Pages data={data} /> : <p>Loading...</p>}
     </div>
   );
