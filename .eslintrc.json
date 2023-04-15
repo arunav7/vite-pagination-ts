@@ -11,8 +11,8 @@
         "plugin:react/jsx-runtime", // disables React must be in scope error
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:prettier/recommended",
         "plugin:import/recommended",
+        "plugin:prettier/recommended",
         "prettier"
     ],
     // Specifying Parser
