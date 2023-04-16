@@ -57,7 +57,9 @@
         "prettier/prettier": [
             "error",
             {
-                "endOfLine": "auto"
+                "endOfLine": "auto",
+                "singleAttributePerLine": true,
+                "jsxSingleQuote": true
             }
         ],
         "react-hooks/rules-of-hooks": "error",
