@@ -5,5 +5,7 @@
   "tabWidth": 2,
   "printWidth": 80,
   "endofLine": "lf",
-  "trailingComma": "all"
+  "trailingComma": "all",
+  "singleAttributePerLine": true,
+  "jsxSingleQuote": true
 }

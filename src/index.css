@@ -36,6 +36,14 @@ h1 {
   line-height: 1.1;
 }
 
+h3 {
+  color: #64748B;
+}
+
+p {
+  color: #64748BD9;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

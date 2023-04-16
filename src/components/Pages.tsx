@@ -1,20 +1,28 @@
-import { Pagination } from '@mui/material';
+import { Box, Pagination } from '@mui/material';
 import { usePagination } from '../hooks/usePagination';
 import { Posts } from '../types';
 
+import './Pages.css';
+
 type PagesPropsType = {
-  data: Posts[];
+  data: Array<Posts>;
 };
 
 const Pages: React.FC<PagesPropsType> = ({ data }): JSX.Element => {
   const { totalPages, endPageIndex, startPageIndex, displayPage } =
     usePagination(5, data.length);
 
-  const displayPosts = data.slice(startPageIndex, endPageIndex + 1);
+  const displayPosts = data.slice(startPageIndex, endPageIndex);
 
   return (
-    <div>
-      <h1>Posts</h1>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        width: 'fit-content',
+        alignItems: 'center',
+      }}
+    >
       {displayPosts.map(item => {
         return (
           <div key={item.id}>
@@ -27,12 +35,14 @@ const Pages: React.FC<PagesPropsType> = ({ data }): JSX.Element => {
         );
       })}
       <Pagination
-        style={{ marginLeft: '30rem' }}
-        color="lime"
+        sx={{
+          pb: '2rem',
+        }}
+        color='lime'
         count={totalPages}
         onChange={displayPage}
       />
-    </div>
+    </Box>
   );
 };
 
