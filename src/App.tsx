@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Skeleton, Stack, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
-import Pages from './components/Pages';
+import { Pages, PostsPlaceholder } from './components';
 import { Posts } from './types';
 
 import './App.css';
@@ -27,51 +27,7 @@ const App: React.FC = (): JSX.Element => {
       >
         Posts
       </Typography>
-      {data && data.length > 0 ? (
-        <Pages data={data} />
-      ) : (
-        <Stack
-          spacing={2}
-          sx={{ margin: 'auto', width: 'fit-content', alignItems: 'center' }}
-        >
-          <Skeleton
-            animation='wave'
-            variant='rounded'
-            width={1000}
-            height={100}
-          />
-          <Skeleton
-            animation='wave'
-            variant='rounded'
-            width={1000}
-            height={100}
-          />
-          <Skeleton
-            animation='wave'
-            variant='rounded'
-            width={1000}
-            height={100}
-          />
-          <Skeleton
-            animation='wave'
-            variant='rounded'
-            width={1000}
-            height={100}
-          />
-          <Skeleton
-            animation='wave'
-            variant='rounded'
-            width={1000}
-            height={100}
-          />
-          <Skeleton
-            animation='wave'
-            variant='rectangular'
-            width={350}
-            height={40}
-          />
-        </Stack>
-      )}
+      {data && data.length > 0 ? <Pages data={data} /> : <PostsPlaceholder />}
     </div>
   );
 };

@@ -72,10 +72,12 @@
         "react/jsx-filename-extension": "off",
         // defualt props no longer reqd
         "react/require-default-props": "off",
+        "react/no-array-index-key": "off",
         // Enforce the use of the shorthand syntax.
         "object-shorthand": "error",
         "no-console": "warn",
-        "@typescript-eslint/no-floating-promises": "off"
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off"
         // "@typescript-eslint/ban-ts-comment": 0
     }
 }
